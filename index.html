@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+        <div class="word">
+        <span>W</span>
+        <span>E</span>
+        <span>L</span>
+        <span>C</span>
+        <span>O</span>
+        <span>M</span>
+        <span>E</span>
+        
+        </div>
+        <p>Welcome</p>
+        <script>
+            const spans = document.querySelectorAll('.word span');
+            spans.forEach((span, idx) => {
+            span.addEventListener('click', (e) => {
+                e.target.classList.add('active');
+            });
+            span.addEventListener('animationend', (e) => {
+                e.target.classList.remove('active');
+            });
+                setTimeout(() => {
+                span.classList.add('active');
+            }, 750 * (idx+1))
+            });
+        </script>
+  </body>
+</html>
